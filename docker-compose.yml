@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  database:
+    platform: linux/x86_64
+    image: mysql:8.0.28
+    container_name: mnctest_mysql
+    ports:
+      - ${DB_PORT}:3306
+    environment:
+      - MYSQL_ROOT_HOST=localhost
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - database_mysql:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: mnctest_phpmyadmin
+    depends_on:
+      - database
+    environment:
+      - PMA_HOST=database # Note the "mysql". Must be the name of the what you used as the mysql service.
+      - PMA_USER=${DB_USER}
+      - PMA_PORT=3306
+      - PMA_PASSWORD=${DB_PASSWORD}
+    ports:
+      - 6664:80
+    restart: always
+
+volumes:
+  database_mysql:

@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "91b5f125-7c56-45df-bc98-0e75206581c7",
+		"name": "mnctest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3715067"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"first_name\": \"Guntur\",\n\"last_name\": \"Saputro\",\n\"phone_number\": \"0811255501\",\n\"address\": \"Jl. Kebon Sirih No. 1\",\n\"pin\":\"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6662/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6662",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mjc2OTUwNjgsImlzcyI6Im1uY3Rlc3Qtc2VydmljZS1hcGkiLCJzdWIiOiJkMzMxZTBkNi0xNmRjLTQ0YWQtYWFjMS02NTU5NDQyNjZhM2EifQ.Z34ciRDswJakueZfyTncFpjjJFywTWWvujBKsOAPt3E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"first_name\": \"Denies\",\n\"last_name\": \"Kresna\",\n\"address\": \"GTA\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6662/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6662",
+					"path": [
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"phone_number\": \"0811255501\",\n\"pin\":\"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6662/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6662",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Topup",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mjc2OTM0MDYsImlzcyI6Im1uY3Rlc3Qtc2VydmljZS1hcGkiLCJzdWIiOiI0YTJjNWE1My1jODQyLTQ3ZmItOGQzZi00YzRlZDE2NjVlYjYifQ.78mmHSW7nGNBFAvHCpvGlcF3VJgv3TSJnXbDe7epbyU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"amount\": 10000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6662/topup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6662",
+					"path": [
+						"topup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mjc2OTM0MDYsImlzcyI6Im1uY3Rlc3Qtc2VydmljZS1hcGkiLCJzdWIiOiI0YTJjNWE1My1jODQyLTQ3ZmItOGQzZi00YzRlZDE2NjVlYjYifQ.78mmHSW7nGNBFAvHCpvGlcF3VJgv3TSJnXbDe7epbyU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"amount\": 50000,\n\"remarks\":\"pulsa telkomsel 50000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6662/pay",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6662",
+					"path": [
+						"pay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mjc2OTM0MDYsImlzcyI6Im1uY3Rlc3Qtc2VydmljZS1hcGkiLCJzdWIiOiI0YTJjNWE1My1jODQyLTQ3ZmItOGQzZi00YzRlZDE2NjVlYjYifQ.78mmHSW7nGNBFAvHCpvGlcF3VJgv3TSJnXbDe7epbyU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"amount\": 50000,\n\"remarks\":\"pulsa telkomsel 50000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6662/pay",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6662",
+					"path": [
+						"pay"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
